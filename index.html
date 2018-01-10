@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>TEST</title>
+<link rel="stylesheet" href="./Dome-CSS/mui.min.css">
+<link rel="stylesheet" type="text/css" href="./Dome-CSS/myCard.css">
+
+<script src="./Dome-JS/jquery-1.11.3.min.js"></script>
+<script src="./Dome-JS/mui.min.js"></script>
+<style type="text/css">
+/* iphone手机禁止字体放大，css代码 */
+#showOrderDetails {
+	-webkit-text-size-adjust: 100% !important;
+	text-size-adjust: 100% !important;
+	-moz-text-size-adjust: 100% !important;
+}
+
+ul li {
+	margin-bottom: -8px;
+}
+</style>
+<script type="text/javascript">
+	$(window).scroll(function() {
+		if ($(document).scrollTop() >= 100) {
+			$(".to-top").fadeIn();
+		}else{
+			$('.to-top').fadeOut();
+		}
+	});
+	(function(){  
+		if (typeof(WeixinJSBridge) == "undefined") {  
+			document.addEventListener("WeixinJSBridgeReady", function (e) {  
+				setTimeout(function(){  
+					WeixinJSBridge.invoke('setFontSizeCallback',{"fontSize":0}, function(res) {  
+					});  
+				},0);  
+			});  
+		} else {  
+			setTimeout(function(){  
+				WeixinJSBridge.invoke('setFontSizeCallback',{"fontSize":0}, function(res) {
+				});  
+			},0);  
+		}  
+	})();  
+</script>
+</head>
+<body>
+	<div id="toolOrderInputForm"
+		class="receiveBox mui-ios mui-ios-10 mui-ios-10-3 mui-focusin">
+		<div class="mui-content receiveFill">
+			<header style="text-align: center;">
+				<h4 style="line-height: 50px;">信息填写</h4>
+			</header>
+			<div class="mui-scroll">
+				<div class="mui-input-row">
+					<label>金额</label> <input type="number" id="tb_number_money">
+				</div>
+				<br>
+				<div>
+					<label>支付时间</label> <select style="width: 65px;" id="cm_year">
+						<option value="2017">2017</option>
+						<option value="2018" selected="selected">2018</option>
+						<option value="2019">2019</option>
+					</select>年 <select style="width: 48px;" id="cm_mothor">
+						<option value="01">01</option>
+						<option value="02">02</option>
+						<option value="03">03</option>
+						<option value="04">04</option>
+						<option value="05">05</option>
+						<option value="06">06</option>
+						<option value="07">07</option>
+						<option value="08">08</option>
+						<option value="09">09</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select>月 <select style="width: 48px;" id="cm_date">
+						<option value="01">01</option>
+						<option value="02">02</option>
+						<option value="03">03</option>
+						<option value="04">04</option>
+						<option value="05">05</option>
+						<option value="06">06</option>
+						<option value="07">07</option>
+						<option value="08">08</option>
+						<option value="09">09</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+					</select>日
+				</div>
+				<div>
+					<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<select style="width: 65px;" id="cm_time">
+						<option value="00">00</option>
+						<option value="01">01</option>
+						<option value="02">02</option>
+						<option value="03">03</option>
+						<option value="04">04</option>
+						<option value="05">05</option>
+						<option value="06">06</option>
+						<option value="07">07</option>
+						<option value="08">08</option>
+						<option value="09">09</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+					</select>时 <select style="width: 48px;" id="cm_branch"> undefined
+						<option value="00">00</option>
+						<option value="01">01</option>
+						<option value="02">02</option>
+						<option value="03">03</option>
+						<option value="04">04</option>
+						<option value="05">05</option>
+						<option value="06">06</option>
+						<option value="07">07</option>
+						<option value="08">08</option>
+						<option value="09">09</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+						<option value="32">32</option>
+						<option value="33">33</option>
+						<option value="34">34</option>
+						<option value="35">35</option>
+						<option value="36">36</option>
+						<option value="37">37</option>
+						<option value="38">38</option>
+						<option value="39">39</option>
+						<option value="40">40</option>
+						<option value="41">41</option>
+						<option value="42">42</option>
+						<option value="43">43</option>
+						<option value="44">44</option>
+						<option value="45">45</option>
+						<option value="46">46</option>
+						<option value="47">47</option>
+						<option value="48">48</option>
+						<option value="49">49</option>
+						<option value="50">50</option>
+						<option value="51">51</option>
+						<option value="52">52</option>
+						<option value="53">53</option>
+						<option value="54">54</option>
+						<option value="55">55</option>
+						<option value="56">56</option>
+						<option value="57">57</option>
+						<option value="58">58</option>
+						<option value="59">59</option>
+						<option value="60">60</option>
+					</select>分 <select style="width: 48px;" id="cm_second">
+						<option value="00">00</option>
+						<option value="01">01</option>
+						<option value="02">02</option>
+						<option value="03">03</option>
+						<option value="04">04</option>
+						<option value="05">05</option>
+						<option value="06">06</option>
+						<option value="07">07</option>
+						<option value="08">08</option>
+						<option value="09">09</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+						<option value="32">32</option>
+						<option value="33">33</option>
+						<option value="34">34</option>
+						<option value="35">35</option>
+						<option value="36">36</option>
+						<option value="37">37</option>
+						<option value="38">38</option>
+						<option value="39">39</option>
+						<option value="40">40</option>
+						<option value="41">41</option>
+						<option value="42">42</option>
+						<option value="43">43</option>
+						<option value="44">44</option>
+						<option value="45">45</option>
+						<option value="46">46</option>
+						<option value="47">47</option>
+						<option value="48">48</option>
+						<option value="49">49</option>
+						<option value="50">50</option>
+						<option value="51">51</option>
+						<option value="52">52</option>
+						<option value="53">53</option>
+						<option value="54">54</option>
+						<option value="55">55</option>
+						<option value="56">56</option>
+						<option value="57">57</option>
+						<option value="58">58</option>
+						<option value="59">59</option>
+						<option value="60">60</option>
+					</select>秒
+				</div>
+				<div>
+					<label>支付方式</label> <select style="width: 100px;" id="cm_pay_type">
+						<option selected="selected" value="招商银行">招商银行</option>
+						<option value="中国银行">中国银行</option>
+						<option value="平安银行">平安银行</option>
+						<option value="工商银行">工商银行</option>
+						<option value="建设银行">建设银行</option>
+						<option value="农业银行">农业银行</option>
+						<option value="民生银行">民生银行</option>
+						<option value="交通银行">交通银行</option>
+					</select>
+				</div>
+				<button style="width: 100%; height: 50px; text-align: center;" onclick="immediately_submit()">立即生成</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+		$(function(){ 
+			var oDate = new Date(); //实例一个时间对象；
+			var sy_year = oDate.getFullYear();   //获取系统的年；
+			var sy_month = oDate.getMonth()+1;   //获取系统月份
+			var sy_date = oDate.getDate(); // 获取系统日，
+			var sy_hours = oDate.getHours(); //获取系统时，
+			var sy_minutes = oDate.getMinutes(); //分
+			var sy_second = oDate.getSeconds(); //秒  
+			var month,dates,time,branch,second,tims; 
+			for(var i = 0; i <= 60;i++){ 
+				tims = i >= 10 ? i : "0" + i;
+				if(i <= 23){
+					if(i == sy_hours){
+						time += "<option value='"+tims+"' selected='selected'>"+tims+"</option>";
+					}else{
+						time += "<option value='"+tims+"'>"+tims+"</option>";	
+					} 
+				}
+				if(i <= 12 && i > 0) {
+					if(i == sy_month){ 
+						month += "<option value='"+tims+"' selected='selected'>"+tims+"</option>";
+					}else{
+						month += "<option value='"+tims+"'>"+tims+"</option>";	
+					}  
+				}
+				if(i <= 31 && i > 0){
+					if(i == sy_date){ 
+						dates += "<option value='"+tims+"' selected='selected'>"+tims+"</option>";
+					}else{
+						dates += "<option value='"+tims+"'>"+tims+"</option>";	
+					}  
+				}
+				if(i == sy_minutes){ 
+					branch += "<option value='"+tims+"' selected='selected'>"+tims+"</option>";
+				}else{
+					branch += "<option value='"+tims+"'>"+tims+"</option>";	
+				} 
+				if(i == sy_second){ 
+					second += "<option value='"+tims+"' selected='selected'>"+tims+"</option>";
+				}else{
+					second += "<option value='"+tims+"'>"+tims+"</option>";	
+				} 
+			} 
+			$("#cm_time").append(time);
+			$("#cm_branch").append(branch);
+			$("#cm_second").html(second); 
+			$("#cm_mothor").append(month);
+			$("#cm_date").append(dates); 
+		})
+		function immediately_submit(){
+			var tb_number_money = $("#tb_number_money").val();
+			if(tb_number_money == null || tb_number_money == ""){
+				mui.alert('请您输入要生成订单的金额!','温馨提示',function(){}); 
+				return;
+			}
+			sessionStorage.setItem("tlPayMoney",tb_number_money);
+			var cm_year = $("#cm_year").select().val();
+			var cm_mothor = $("#cm_mothor").select().val();
+			var cm_date = $("#cm_date").select().val();
+			var cm_time = $("#cm_time").select().val();
+			var cm_branch = $("#cm_branch").select().val();
+			var cm_second = $("#cm_second").select().val();
+			var cm_pay_type = $("#cm_pay_type").select().val();
+			var strTime = cm_year + "-" + cm_mothor + "-" + cm_date + " " + cm_time + ":" + cm_branch + ":" + cm_second;
+			sessionStorage.setItem("tlPayTime",strTime);
+			sessionStorage.setItem("tlPayType",cm_pay_type);
+			location.href='./OrderDetails.html';
+		}
+	</script>
+	</div>
+</body>
+</html>
